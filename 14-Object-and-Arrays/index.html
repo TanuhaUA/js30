@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object and Arrays</title>
+</head>
+<body>
+<script>
+    let players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
+
+    const team = players;
+    const team2 = players.slice();
+    const team3 = [].concat(players);
+    const team4 = [...players];
+    const team5 = Array.from(players);
+
+//    console.log(players, team2);
+//    console.log(team3,  team4, team5);
+
+    team[3] = 'team1';
+    team2[3] = 'team2';
+    team3[3] = 'team3';
+    team4[3] = 'team4';
+    team5[3] = 'team5';
+
+//    console.log(players, team2);
+//    console.log(team3,  team4, team5);
+
+    const person = {
+        name: 'Wes Bos',
+        age: 77
+    };
+
+    const captain = person;
+    captain.number = 99;
+
+    const cap2 = Object.assign({}, person, {
+        number: 88,
+        age: 12
+    });
+
+    const cap3 = {...person};
+
+    const wes = {
+        name: 'Wes',
+        age: 100,
+        social: {
+            twitter: 'twitter',
+            fb: 'fb'
+        }
+    };
+
+    console.log(wes);
+
+    const dev = Object.assign({}, wes);
+
+    dev.age = 40;
+    dev.social.fb = 'fb2';
+
+    const dev2 = JSON.parse(JSON(stringify(wes))); //don't do this
+
+
+    console.log(person, captain);
+    console.log(cap2);
+</script>
+
+</body>
+</html>
